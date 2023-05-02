@@ -1,0 +1,9 @@
+name: echo event
+on:
+  repository_dispatch:
+    types: [echo]
+jobs:
+  echo-job:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Hello ${{ github.event.client_payload.name }}!"
